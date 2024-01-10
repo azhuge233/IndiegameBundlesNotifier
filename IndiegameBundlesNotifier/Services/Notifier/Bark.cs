@@ -18,15 +18,16 @@ namespace IndiegameBundlesNotifier.Services.Notifier {
 
 				foreach (var record in records) {
 					sb.Clear();
-					_logger.LogDebug($"{NotifierStrings.debugSendMessageBark} : {record.Title}");
+					_logger.LogDebug($"{NotifierStrings.debugSendMessageBark}: {record.Title}");
 					await webGet.LoadFromWebAsync(
 						sb.Append(url)
 						.Append(NotifyFormatStrings.barkUrlTitle)
 						.Append(HttpUtility.UrlEncode(record.ToBarkMessage()))
 						.Append(HttpUtility.UrlEncode(NotifyFormatStrings.projectLink))
-						.AppendFormat(NotifyFormatStrings.barkUrlArgs, record.Url)
+						.AppendFormat(NotifyFormatStrings.barkUrlArgs, HttpUtility.UrlEncode(record.Url))
 						.ToString()
 					);
+					_logger.LogDebug(sb.ToString());
 				}
 
 				_logger.LogDebug($"Done: {NotifierStrings.debugSendMessageBark}");

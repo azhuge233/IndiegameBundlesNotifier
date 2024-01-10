@@ -1,22 +1,22 @@
 ﻿namespace IndiegameBundlesNotifier.Strings {
 	internal static class NotifyFormatStrings {
 		#region ToMessage() strings
-		internal static readonly string telegramFormat = "<b>IndiegameBundles 信息</b>\n\n" +
+		internal static readonly string telegramFormat = "<b>IndiegameBundles</b>\n\n" +
 			"<i>{0}</i>\n" +
 			"文章链接: {1}\n";
 		internal static readonly string barkFormat = "{0}\n" +
 			"文章链接: {1}\n";
 		internal static readonly string emailFormat = "<b>{0}</b><br>" +
 			"文章链接: <a href=\"{1}\">{1}</a><br>";
-		internal static readonly string qqFormat = "IndiegameBundles 信息\n\n" +
+		internal static readonly string qqFormat = "IndiegameBundles\n\n" +
 			"{0}\n" +
 			"文章链接: {1}\n";
 		internal static readonly string pushPlusFormat = "<b>{0}</b><br>" +
 			"文章链接: <a href=\"{1}\">{1}</a><br>";
-		internal static readonly string dingTalkFormat = "IndiegameBundles 信息\n\n" +
+		internal static readonly string dingTalkFormat = "IndiegameBundles\n\n" +
 			"{0}\n" +
 			"文章链接: {1}\n";
-		internal static readonly string pushDeerFormat = "IndiegameBundles 信息\n\n" +
+		internal static readonly string pushDeerFormat = "IndiegameBundles\n\n" +
 			"{0}\n" +
 			"文章链接: {1}\n";
 		internal static readonly string discordFprmat = "文章链接: {0}\n";

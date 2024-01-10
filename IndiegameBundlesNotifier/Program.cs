@@ -29,7 +29,7 @@ namespace IndiegameBundlesNotifier {
 					// Notify first, then write records
 					await notifyOP.Notify(config, parseResult.NotifyRecords);
 
-					//// Write new records
+					// Write new records
 					jsonOp.WriteData(parseResult.Records);
 				}
 

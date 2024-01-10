@@ -13,7 +13,7 @@ namespace IndiegameBundlesNotifier.Models.PostContent {
 		[JsonPropertyName("description")]
 		public string Description { get; set; }
 		[JsonPropertyName("color")]
-		public int Color { get; set; } = 17919;
+		public int Color { get; set; } = 11149345;
 		[JsonPropertyName("footer")]
 		public Footer Footer { get; set; }
 	}

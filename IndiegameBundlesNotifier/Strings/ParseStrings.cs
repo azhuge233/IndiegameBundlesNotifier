@@ -1,7 +1,7 @@
 ﻿namespace IndiegameBundlesNotifier.Strings {
 	internal class ParseStrings {
 		#region XPath
-		internal static readonly string articlesXPath = """.//div[@class='wpb_wrapper']//div//div//div//div[@class='td-module-meta-info']""";
+		internal static readonly string articlesXPath = """.//div[@class='wpb_wrapper']//div//div[contains(@class, 'tdb_module_loop') and contains(@class, 'td_module_wrap')]//div//div[@class='td-module-meta-info']""";
 		internal static readonly string aLinkXPath = """.//h3[contains(@class, 'entry-title')]//a""";
 		#endregion
 
