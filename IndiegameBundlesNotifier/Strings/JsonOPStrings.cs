@@ -1,0 +1,14 @@
+﻿namespace IndiegameBundlesNotifier.Strings {
+	internal class JsonOPStrings {
+		#region path strings
+		internal static readonly string configPath = $"{AppDomain.CurrentDomain.BaseDirectory}Config{Path.DirectorySeparatorChar}config.json";
+		internal static readonly string recordsPath = $"{AppDomain.CurrentDomain.BaseDirectory}Records{Path.DirectorySeparatorChar}records.json";
+		#endregion
+
+		#region debug strings
+		internal static readonly string debugWrite = "Write records";
+		internal static readonly string debugLoadConfig = "Load config";
+		internal static readonly string debugLoadRecords = "Load previous records";
+		#endregion
+	}
+}
