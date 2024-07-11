@@ -35,13 +35,17 @@ namespace IndiegameBundlesNotifier.Services {
 							Url = link
 						};
 
-						parseResult.Records.Add(newRecord);
-
 						if (records.Count == 0 || !records.Any(record => record.Url == newRecord.Url)) {
 							_logger.LogInformation(ParseStrings.debugFoundNewRecord, title);
+							parseResult.Records.Add(newRecord);
 							parseResult.NotifyRecords.Add(newRecord);
 						} else _logger.LogDebug(ParseStrings.debugFoundInPreviousRecord, title);
 					}
+
+					// Add old records back AFTER new records
+					// Must be placed here since old records must be recorded after new records
+					// so when JsonOP deletes, this makes sure it deletes old ones instead of new ones
+					parseResult.Records.AddRange(records);
 				} else _logger.LogDebug("No articles detected");
 
 				_logger.LogDebug("Done");

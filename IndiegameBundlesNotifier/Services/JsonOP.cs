@@ -12,6 +12,14 @@ namespace IndiegameBundlesNotifier.Services {
 			try {
 				if (data.Count > 0) {
 					_logger.LogDebug(JsonOPStrings.debugWrite);
+
+					// Preserve 30 records to prevent duplications on notification
+					// probably caused by unstable site content
+					while (data.Count > 30) {
+						_logger.LogDebug(JsonOPStrings.debugDeleteRecord, data[^1].Title);
+						data.RemoveAt(data.Count - 1);
+					}
+
 					string json = JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
 					File.WriteAllText(JsonOPStrings.recordsPath, string.Empty);
 					File.WriteAllText(JsonOPStrings.recordsPath, json);

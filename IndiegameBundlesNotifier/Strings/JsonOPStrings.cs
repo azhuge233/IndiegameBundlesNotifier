@@ -9,6 +9,8 @@
 		internal static readonly string debugWrite = "Write records";
 		internal static readonly string debugLoadConfig = "Load config";
 		internal static readonly string debugLoadRecords = "Load previous records";
+
+		internal static readonly string debugDeleteRecord = "Deleting record: {0}";
 		#endregion
 	}
 }
