@@ -16,7 +16,7 @@ namespace IndiegameBundlesNotifier.Services.Notifier {
 
 				var message = new MimeMessage();
 
-				message.From.Add(new MailboxAddress("EpicBundle-FreeGames", fromAddress));
+				message.From.Add(new MailboxAddress("IndiegameBundles", fromAddress));
 				message.To.Add(new MailboxAddress("Receiver", toAddress));
 
 				var sb = new StringBuilder();
