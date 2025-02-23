@@ -2,7 +2,7 @@
 
 > EpicBundle has not been updated for a while, so I made this as an alternative.
 
-A CLI tool fetches free games info from IndiegameBundles, sends notification through Telegram, Bark, Email, QQ, PushPlus, DingTalk, PushDeer and Discord.
+A CLI tool fetches free games info from IndiegameBundles, sends notification through Telegram, Bark, Email, QQ, PushPlus, DingTalk, PushDeer, Discord and MeoW.
 
 Demo Telegram Channel [@azhuge233_FreeGames](https://t.me/azhuge233_FreeGames)
 
