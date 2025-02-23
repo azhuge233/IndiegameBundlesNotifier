@@ -57,5 +57,11 @@ namespace IndiegameBundlesNotifier.Models.Record {
 			// PossibleLinks.ForEach(link => sb.AppendFormat(NotifyFormatStrings.possibleLinkFormat, link));
 			return sb.ToString();
 		}
+
+		public string ToMeowMessage() {
+			var sb = new StringBuilder().AppendFormat(NotifyFormatStrings.meowFormat, Title, Url);
+			// PossibleLinks.ForEach(link => sb.AppendFormat(NotifyFormatStrings.possibleLinkFormat, link));
+			return sb.ToString();
+		}
 	}
 }

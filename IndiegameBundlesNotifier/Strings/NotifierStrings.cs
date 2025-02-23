@@ -12,6 +12,7 @@
 		internal static readonly string debugWSMessageRecievedQQRed = "Message received: {0}";
 		internal static readonly string debugWSDisconnectedQQRed = "Disconnected: {0}";
 		internal static readonly string debugSendMessageTelegram = "Send notification to Telegram";
+		internal static readonly string debugSendMessageMeow = "Send notification to Meow";
 
 		internal static readonly string debugCreateMessage = "Create notification message";
 	}

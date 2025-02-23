@@ -76,6 +76,12 @@ namespace IndiegameBundlesNotifier.Services {
 					notifyTasks.Add(services.GetRequiredService<Email>().SendMessage(config, pushList));
 				} else _logger.LogInformation(NotifyOPStrings.debugDisabledFormat, "Email");
 
+				// Meow notifications
+				if (config.EnableMeow) {
+					_logger.LogInformation(NotifyOPStrings.debugEnabledFormat, "Meow");
+					notifyTasks.Add(services.GetRequiredService<Meow>().SendMessage(config, pushList));
+				} else _logger.LogInformation(NotifyOPStrings.debugEnabledFormat, "Meow");
+
 				await Task.WhenAll(notifyTasks);
 
 				_logger.LogDebug($"Done: {NotifyOPStrings.debugNotify}");

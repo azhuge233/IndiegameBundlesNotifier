@@ -20,6 +20,8 @@
 			"{0}\n" +
 			"Article Link: {1}\n";
 		internal static readonly string discordFprmat = "Article Link: {0}\n";
+		internal static readonly string meowFormat = "{0}\n" +
+			"Article Link: {1}\n";
 		#endregion
 
 		#region url, title format strings
@@ -52,6 +54,9 @@
 		internal static readonly string dingTalkUrlFormat = "https://oapi.dingtalk.com/robot/send?access_token={0}";
 
 		internal static readonly string pushDeerUrlFormat = "https://api2.pushdeer.com/message/push?pushkey={0}&&text={1}";
+
+		internal static readonly string meowUrlFormat = "{0}/{1}";
+		internal static readonly string meowUrlTitle = "IndiegameBundles";
 		#endregion
 
 		internal static readonly string projectLink = "\n\nFrom https://github.com/azhuge233/IndiegameBundlesNotifier";
