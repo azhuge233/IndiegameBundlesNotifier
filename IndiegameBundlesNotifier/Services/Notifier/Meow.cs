@@ -2,7 +2,7 @@
 using IndiegameBundlesNotifier.Models.Record;
 using IndiegameBundlesNotifier.Strings;
 using Microsoft.Extensions.Logging;
-using SteamDBFreeGames.Models.PostContent;
+using IndiegameBundlesNotifier.Models.PostContent;
 using System.Text.Json;
 using System.Text;
 
