@@ -1,20 +1,18 @@
 ﻿using IndiegameBundlesNotifier.Models.Config;
+using IndiegameBundlesNotifier.Models.PostContent;
 using IndiegameBundlesNotifier.Models.Record;
 using IndiegameBundlesNotifier.Strings;
 using Microsoft.Extensions.Logging;
-using IndiegameBundlesNotifier.Models.PostContent;
-using System.Text.Json;
+using Microsoft.Extensions.Options;
 using System.Text;
+using System.Text.Json;
 
 namespace IndiegameBundlesNotifier.Services.Notifier {
-	internal class Meow: INotifiable {
-		private readonly ILogger<Meow> _logger;
+	internal class Meow(ILogger<Meow> logger, IOptions<Config> config) : INotifiable {
+		private readonly ILogger<Meow> _logger = logger;
+		private readonly Config config = config.Value;
 
-		public Meow(ILogger<Meow> logger) {
-			_logger = logger;
-		}
-
-		public async Task SendMessage(NotifyConfig config, List<FreeGameRecord> records) {
+		public async Task SendMessage(List<FreeGameRecord> records) {
 			try {
 				_logger.LogDebug(NotifierStrings.debugSendMessageMeow);
 

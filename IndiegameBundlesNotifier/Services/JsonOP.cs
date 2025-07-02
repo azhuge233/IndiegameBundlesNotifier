@@ -2,7 +2,6 @@
 using System.Text.Json;
 using IndiegameBundlesNotifier.Strings;
 using IndiegameBundlesNotifier.Models.Record;
-using IndiegameBundlesNotifier.Models.Config;
 
 namespace IndiegameBundlesNotifier.Services {
 	internal class JsonOP(ILogger<JsonOP> logger) : IDisposable {
@@ -45,17 +44,6 @@ namespace IndiegameBundlesNotifier.Services {
 			}
 		}
 
-		internal Config LoadConfig() {
-			try {
-				_logger.LogDebug(JsonOPStrings.debugLoadConfig);
-				var content = JsonSerializer.Deserialize<Config>(File.ReadAllText(JsonOPStrings.configPath));
-				_logger.LogDebug($"Done: {JsonOPStrings.debugLoadConfig}");
-				return content;
-			} catch (Exception) {
-				_logger.LogError($"Error: {JsonOPStrings.debugLoadConfig}");
-				throw;
-			}
-		}
 		public void Dispose() {
 			GC.SuppressFinalize(this);
 		}

@@ -1,12 +1,14 @@
 ﻿using Microsoft.Extensions.Logging;
 using IndiegameBundlesNotifier.Models.Config;
 using IndiegameBundlesNotifier.Strings;
+using Microsoft.Extensions.Options;
 
 namespace IndiegameBundlesNotifier.Services {
-	internal class ConfigValidator(ILogger<ConfigValidator> logger) : IDisposable {
+	internal class ConfigValidator(ILogger<ConfigValidator> logger, IOptions<Config> config) : IDisposable {
 		private readonly ILogger<ConfigValidator> _logger = logger;
+		private readonly Config config = config.Value;
 
-		internal void CheckValid(Config config) {
+		internal void CheckValid() {
 			try {
 				_logger.LogDebug(ConfigValidatorStrings.debugCheckValid);
 

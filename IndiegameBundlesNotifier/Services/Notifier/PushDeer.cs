@@ -3,14 +3,16 @@ using IndiegameBundlesNotifier.Models.Config;
 using IndiegameBundlesNotifier.Models.Record;
 using IndiegameBundlesNotifier.Strings;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System.Text;
 using System.Web;
 
 namespace IndiegameBundlesNotifier.Services.Notifier {
-	internal class PushDeer(ILogger<PushDeer> logger): INotifiable {
+	internal class PushDeer(ILogger<PushDeer> logger, IOptions<Config> config) : INotifiable {
 		private readonly ILogger<PushDeer> _logger = logger;
+		private readonly Config config = config.Value;
 
-		public async Task SendMessage(NotifyConfig config, List<FreeGameRecord> records) {
+		public async Task SendMessage(List<FreeGameRecord> records) {
 			try {
 				_logger.LogDebug(NotifierStrings.debugSendMessagePushDeer);
 				var sb = new StringBuilder();

@@ -8,7 +8,6 @@ namespace IndiegameBundlesNotifier.Services {
 	internal class Parser(ILogger<Parser> logger): IDisposable {
 		#region DI
 		private readonly ILogger<Parser> _logger = logger;
-		// private readonly IServiceProvider services = DI.BuildDiScraperOnly();
 		#endregion
 
 		public ParseResult Parse(string source, List<FreeGameRecord> records) {

@@ -1,18 +1,20 @@
 ﻿using IndiegameBundlesNotifier.Models.Config;
-using IndiegameBundlesNotifier.Models.Record;
 using IndiegameBundlesNotifier.Models.PostContent;
+using IndiegameBundlesNotifier.Models.Record;
 using IndiegameBundlesNotifier.Strings;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System.Text;
 using System.Text.Json;
 
 namespace IndiegameBundlesNotifier.Services.Notifier {
-	internal class Discord(ILogger<Discord> logger) : INotifiable {
+	internal class Discord(ILogger<Discord> logger, IOptions<Config> config) : INotifiable {
 		private readonly ILogger<Discord> _logger = logger;
+		private readonly Config config = config.Value;
 
 		private readonly int DiscordMaxEmbedCount = 10;
 
-		public async Task SendMessage(NotifyConfig config, List<FreeGameRecord> records) {
+		public async Task SendMessage(List<FreeGameRecord> records) {
 			try {
 				_logger.LogDebug(NotifierStrings.debugSendMessageDiscord);
 

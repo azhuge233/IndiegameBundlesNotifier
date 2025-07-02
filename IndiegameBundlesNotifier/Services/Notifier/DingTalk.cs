@@ -1,16 +1,18 @@
 ﻿using IndiegameBundlesNotifier.Models.Config;
-using IndiegameBundlesNotifier.Models.Record;
 using IndiegameBundlesNotifier.Models.PostContent;
+using IndiegameBundlesNotifier.Models.Record;
 using IndiegameBundlesNotifier.Strings;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System.Text;
 using System.Text.Json;
 
 namespace IndiegameBundlesNotifier.Services.Notifier {
-	internal class DingTalk(ILogger<DingTalk> logger): INotifiable {
+	internal class DingTalk(ILogger<DingTalk> logger, IOptions<Config> config) : INotifiable {
 		private readonly ILogger<DingTalk> _logger = logger;
+		private readonly Config config = config.Value;
 
-		public async Task SendMessage(NotifyConfig config, List<FreeGameRecord> records) {
+		public async Task SendMessage(List<FreeGameRecord> records) {
 			try {
 				_logger.LogDebug(NotifierStrings.debugSendMessageDingTalk);
 
