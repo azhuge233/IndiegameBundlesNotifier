@@ -3,7 +3,7 @@
 		#region ToMessage() strings
 		internal static readonly string telegramFormat = "<b>IndiegameBundles</b>\n\n" +
 			"<i>{0}</i>\n" +
-			"Article Link: {1}\n";
+			"Article Link: {1}\n{2}";
 		internal static readonly string barkFormat = "{0}\n" +
 			"Article Link: {1}\n";
 		internal static readonly string emailFormat = "<b>{0}</b><br>" +

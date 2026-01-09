@@ -7,61 +7,40 @@ namespace IndiegameBundlesNotifier.Models.Record {
 
 		public string Title { get; set; }
 
-		// public List<string> PossibleLinks { get; set; }
-
 		public string ToTelegramMessage() {
-			var sb = new StringBuilder().AppendFormat(NotifyFormatStrings.telegramFormat, Title, Url);
-			// PossibleLinks.ForEach(link => sb.AppendFormat(NotifyFormatStrings.possibleLinkFormat, link));
-			sb.Append(NotifyFormatStrings.telegramTag);
-			return sb.ToString();
+			return string.Format(NotifyFormatStrings.telegramFormat, Title, Url, NotifyFormatStrings.telegramTag);
 		}
 
 		public string ToBarkMessage() {
-			var sb = new StringBuilder().AppendFormat(NotifyFormatStrings.barkFormat, Title, Url);
-			// PossibleLinks.ForEach(link => sb.AppendFormat(NotifyFormatStrings.possibleLinkFormat, link));
-			return sb.ToString();
+			return string.Format(NotifyFormatStrings.barkFormat, Title, Url);
 		}
 
 		public string ToEmailMessage() {
-			var sb = new StringBuilder().AppendFormat(NotifyFormatStrings.emailFormat, Title, Url);
-			// PossibleLinks.ForEach(link => sb.AppendFormat(NotifyFormatStrings.possibleLinkFormatHtml, link));
-			return sb.ToString();
+			return string.Format(NotifyFormatStrings.emailFormat, Title, Url);
 		}
 
 		public string ToQQMessage() {
-			var sb = new StringBuilder().AppendFormat(NotifyFormatStrings.qqFormat, Title, Url);
-			// PossibleLinks.ForEach(link => sb.AppendFormat(NotifyFormatStrings.possibleLinkFormat, link));
-			return sb.ToString();
+			return string.Format(NotifyFormatStrings.qqFormat, Title, Url);
 		}
 
 		public string ToPushPlusMessage() {
-			var sb = new StringBuilder().AppendFormat(NotifyFormatStrings.pushPlusFormat, Title, Url);
-			// PossibleLinks.ForEach(link => sb.AppendFormat(NotifyFormatStrings.possibleLinkFormatHtml, link));
-			return sb.ToString();
+			return string.Format(NotifyFormatStrings.pushPlusFormat, Title, Url);
 		}
 
 		public string ToDingTalkMessage() {
-			var sb = new StringBuilder().AppendFormat(NotifyFormatStrings.dingTalkFormat, Title, Url);
-			// PossibleLinks.ForEach(link => sb.AppendFormat(NotifyFormatStrings.possibleLinkFormat, link));
-			return sb.ToString();
+			return string.Format(NotifyFormatStrings.dingTalkFormat, Title, Url);
 		}
 
 		public string ToPushDeerMessage() {
-			var sb = new StringBuilder().AppendFormat(NotifyFormatStrings.pushDeerFormat, Title, Url);
-			// PossibleLinks.ForEach(link => sb.AppendFormat(NotifyFormatStrings.possibleLinkFormat, link));
-			return sb.ToString();
+			return string.Format(NotifyFormatStrings.pushDeerFormat, Title, Url);
 		}
 
 		public string ToDiscordMessage() {
-			var sb = new StringBuilder().AppendFormat(NotifyFormatStrings.discordFprmat, Url);
-			// PossibleLinks.ForEach(link => sb.AppendFormat(NotifyFormatStrings.possibleLinkFormat, link));
-			return sb.ToString();
+			return string.Format(NotifyFormatStrings.discordFprmat, Url);
 		}
 
 		public string ToMeowMessage() {
-			var sb = new StringBuilder().AppendFormat(NotifyFormatStrings.meowFormat, Title, Url);
-			// PossibleLinks.ForEach(link => sb.AppendFormat(NotifyFormatStrings.possibleLinkFormat, link));
-			return sb.ToString();
+			return string.Format(NotifyFormatStrings.meowFormat, Title, Url);
 		}
 	}
 }
