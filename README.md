@@ -4,7 +4,7 @@
 
 A CLI tool fetches free games info from IndiegameBundles, sends notification through Telegram, Bark, Email, QQ, PushPlus, DingTalk, PushDeer, Discord and MeoW.
 
-Demo Telegram Channel [@azhuge233_FreeGames](https://t.me/azhuge233_FreeGames)
+Demo Telegram Channel [@azhuge233_FreeGames](https://telegram.me/azhuge233_FreeGames)
 
 ## Build
 
