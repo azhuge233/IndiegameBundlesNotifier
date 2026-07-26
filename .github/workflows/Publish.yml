@@ -58,7 +58,7 @@ jobs:
         echo "Creating new Release..."
 
         gh release create latest \
-          IB-win-x64.zip \
+          bin/release/IB-win-x64.zip \
           --target "$GITHUB_SHA" \
           --title "Latest" \
           --notes "" \
