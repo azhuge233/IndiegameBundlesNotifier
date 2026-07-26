@@ -33,15 +33,33 @@ jobs:
     - name: Install Zip
       uses: montudor/action-zip@v1
       
-    - name: Create Zip
+    - name: Install and Create Zip
       run: |
         zip -qq -r IB-win-x64.zip win-x64/*
       working-directory: bin/release
         
-    - name: Create Release
-      uses: "marvinpinto/action-automatic-releases@latest"
-      with:
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: "latest"
-        prerelease: false
-        files: bin/release/*.zip
+    - name: Recreate Latest Release
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        set -e
+
+        echo "Deleting existing Release..."
+
+        if gh release view latest >/dev/null 2>&1; then
+          gh release delete latest --yes --cleanup-tag
+        else
+          echo "Release 'latest' does not exist."
+        fi
+
+        git tag -d latest >/dev/null 2>&1 || true
+
+        echo "Creating new Release..."
+
+        gh release create latest \
+          IB-win-x64.zip \
+          --target "$GITHUB_SHA" \
+          --title "Latest" \
+          --notes "" \
+          --latest
